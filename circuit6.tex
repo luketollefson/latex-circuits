@@ -1,0 +1,49 @@
+\documentclass[preview,border={50pt,5pt,50pt,5pt}]{standalone}
+
+\usepackage{tikz}
+\usepackage[siunitx]{circuitikz}
+\usepackage{amsmath}
+
+
+\begin{document}
+
+\setcounter{figure}{5}
+
+\begin{figure}[h!]
+  \begin{center}
+    \begin{circuitikz}
+      \draw (0,8)
+      to[american voltage source,v=\SI{12.0}{\volt}] (3,8) % The voltage source
+      to[R=\parbox{0em}{\begin{align*} R_2&=\SI{150}{\ohm}\\
+                                       I_2&=\SI{30.8}{\milli\ampere}\\
+                                       V_2&=\SI{4.63}{\volt}\end{align*}}] (3,6)
+      to[R=\parbox{0em}{\begin{align*}\\\\ R_3&=\SI{682}{\ohm}\\
+                                       I_3&=\SI{7.6}{\milli\ampere}\\
+                                       V_3&=\SI{5.25}{\volt}\end{align*}},*-*] (0,6)
+      to[R=\parbox{0em}{\begin{align*} R_1&=\SI{68}{\ohm}\\
+                                       I_1&=\SI{30.8}{\milli\ampere}\\
+                                       V_1&=\SI{2.09}{\volt}\end{align*}}] (0,8);
+      \draw (3,6)
+      to[short] (3,4)
+      to[R=\parbox{0em}{\begin{align*}\\\\ R_4&=\SI{668}{\ohm}\\
+                                       I_4&=\SI{7.8}{\milli\ampere}\\
+                                       V_4&=\SI{5.25}{\volt}\end{align*}},*-*] (0,4)
+      to[short] (0,6);
+      \draw (3,4)
+      to[short] (3,2)
+      to[R=\parbox{0em}{\begin{align*}\\\\ R_5&=\SI{615}{\ohm}\\
+                                       I_5&=\SI{8.4}{\milli\ampere}\\
+                                       V_5&=\SI{5.25}{\volt}\end{align*}},*-*] (0,2)
+      to[short] (0,4);
+      \draw (3,2)
+      to[short] (3,0)
+      to[R=\parbox{0em}{\begin{align*}\\\\ R_6&=\SI{750}{\ohm}\\
+                                       I_6&=\SI{6.9}{\milli\ampere}\\
+                                       V_6&=\SI{5.25}{\volt}\end{align*}}] (0,0)
+      to[short] (0,2);
+    \end{circuitikz}
+    \caption{Experimental resistances, currents, and voltages for complex circuit.}
+  \end{center}
+\end{figure}
+
+\end{document}

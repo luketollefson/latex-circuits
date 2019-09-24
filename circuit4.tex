@@ -1,0 +1,46 @@
+\documentclass[preview,border={50pt,5pt,50pt,5pt}]{standalone}
+
+\usepackage{tikz}
+\usepackage[siunitx]{circuitikz}
+\usepackage{amsmath}
+
+
+\begin{document}
+
+\setcounter{figure}{3}
+
+\begin{figure}[h!]
+  \begin{center}
+    \begin{circuitikz}
+      \draw (0,0)
+      to[american voltage source,v=\SI{12.0}{\volt}] (0,2) % The voltage source
+      to[short] (0.9,2)
+      to[R=\parbox{0em}{\begin{align*} R_1&=\SI{680}{\ohm}\\
+                                       I_1&=\SI{17.4}{\milli\ampere}\\
+                                       V_1&=\SI{11.93}{\volt}\end{align*}},*-*] (0.9,0)
+      to[short] (0,0);
+      \draw (0.9,2)
+      to[short] (3.7,2)
+      to[R=\parbox{0em}{\begin{align*} R_2&=\SI{666}{\ohm}\\
+                                       I_2&=\SI{17.8}{\milli\ampere}\\
+                                       V_2&=\SI{11.93}{\volt}\end{align*}},*-*] (3.7,0)
+      to[short] (0.9,0);
+      \draw (3.7,2)
+      to[short] (6.5,2)
+      to[R=\parbox{0em}{\begin{align*} R_3&=\SI{614}{\ohm}\\
+                                       I_3&=\SI{19.4}{\milli\ampere}\\
+                                       V_3&=\SI{11.93}{\volt}\end{align*}},*-*] (6.5,0)
+      to[short] (3.6,0);
+      \draw (6.5,2)
+      to[short] (9.3,2)
+      to[R=\parbox{0em}{\begin{align*} R_4&=\SI{750}{\ohm}\\
+                                       I_4&=\SI{15.8}{\milli\ampere}\\
+                                       V_4&=\SI{11.93}{\volt}\end{align*}}] (9.3,0)
+      to[short] (6.5,0);
+    \end{circuitikz}
+    \caption{Experimental resistances, currents, and voltages for parallel circuit.}
+  \end{center}
+\end{figure}
+
+
+\end{document}

@@ -1,0 +1,32 @@
+\documentclass[preview,border={5pt,5pt,5pt,5pt}]{standalone}
+
+\usepackage{tikz}
+\usepackage[siunitx]{circuitikz}
+\usepackage{amsmath}
+
+
+\begin{document}
+
+\begin{figure}[h!]
+  \begin{center}
+    \begin{circuitikz}
+      \draw (0,0)
+      to[american voltage source,v=\SI{12.0}{\volt}] (0,2) % The voltage source
+      to[R=\parbox{0em}{\begin{align*} R_1&=\SI{100}{\ohm}\\
+                                       I_1&=\SI{16.0}{\milli\ampere}\\
+                                       V_1&=\SI{1.60}{\volt}\end{align*}\\\\}] (8,2)
+      to[R=\parbox{0em}{\begin{align*} R_2&=\SI{180}{\ohm}\\
+                                       I_2&=\SI{16.0}{\milli\ampere}\\
+                                       V_2&=\SI{2.88}{\volt}\end{align*}}] (8,0)
+      to[R=\parbox{0em}{\begin{align*}\\\\ R_3&=\SI{200}{\ohm}\\
+                                       I_3&=\SI{16.0}{\milli\ampere}\\
+                                       V_3&=\SI{3.20}{\volt}\end{align*}}] (4,0)
+      to[R=\parbox{0em}{\begin{align*}\\\\ R_4&=\SI{270}{\ohm}\\
+                                       I_4&=\SI{16.0}{\milli\ampere}\\
+                                       V_4&=\SI{4.32}{\volt}\end{align*}}] (0,0);
+    \end{circuitikz}
+    \caption{Predicted currents and voltages for series circuit.}
+  \end{center}
+\end{figure}
+
+\end{document}

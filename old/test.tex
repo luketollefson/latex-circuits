@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage[american voltages,american currents]{circuitikz}
+%\usepackage[american voltages, american currents,siunitx]{circuitikz}
+\usetikzlibrary{arrows,circuits.ee.IEC,positioning}
+
+\begin{document}
+\begin{tikzpicture}[circuit ee IEC,american,x=2cm,y=2cm, semithick, every info/.style={font=\footnotesize}, small circuit symbols, set resistor graphic=var resistor IEC graphic]
+\draw (0,0) to [ground={near start, rotate=180}] (0,1)
+          to [american voltage source={near start, info=$V_S$,info'=$5\mbox{V}$}] (0,3)
+          to [break contact={info=$t_0$}] (2,3)
+          to [inductor={info=$L$,info'=$1\mbox{H}$}] (3,3)
+          to [resistor={info=$R$, info'=$47\Omega$}] (6,3)
+          to [capacitor={info'=$C$, info=$247\mbox{pF}$}] (6,1)
+          to [ground={near end}] (6,0);
+\end{tikzpicture}
+\end{document}
